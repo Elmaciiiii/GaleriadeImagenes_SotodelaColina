@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Galeria de Imagenes</title>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="imagenes/jugador3.jpg" alt="Imagen 3"><button class="fullscreen-btn">🖼</button></div>
+            <div class="slide"><img src="imagenes/jugador1.jpg" alt="Imagen 1"><button class="fullscreen-btn">🖼</button></div>
+            <div class="slide"><img src="imagenes/jugador2.jpg" alt="Imagen 2"><button class="fullscreen-btn">🖼</button></div>
+            <div class="slide"><img src="imagenes/jugador3.jpg" alt="Imagen 3"><button class="fullscreen-btn">🖼</button></div>
+            <div class="slide"><img src="imagenes/jugador1.jpg" alt="Imagen 1"><button class="fullscreen-btn">🖼</button></div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <!-- Contenedor de imagen en pantalla completa -->
+    <div class="fullscreen-image-container" id="fullscreenContainer">
+        <button class="close-btn" id="closeFullscreen">✖</button>
+        <img id="fullscreenImage" src="" alt="Imagen Completa">
+    </div>
+
+    <!-- Botón para cambiar entre el modo claro y oscuro -->
+    <button class="mode-toggle" id="modeToggle">🌙</button>
+
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2WYoQI9nzxve2tk9bMTOtm?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+    <script src="script.js"></script>
+</body>
+</html>

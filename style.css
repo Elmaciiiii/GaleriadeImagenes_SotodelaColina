@@ -1,0 +1,182 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e3f2fd;
+    transition: background 0.3s;
+}
+
+.dark-mode {
+    background: #263238;
+    color: #b0bec5;
+}
+
+/* Contenedor del slider */
+.slider-container {
+    width: 80%;
+    max-width: 700px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 2px solid #bbdefb;
+    margin-bottom: 20px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: saturate(1.1);
+    transition: filter 0.3s ease-in-out;
+}
+
+.slide img:hover {
+    filter: saturate(1.3);
+}
+
+/* Botones de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2196f3;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.prev:hover, .next:hover {
+    background-color: #1976d2;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Botón de pantalla completa */
+.fullscreen-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ffc107;
+    color: #212121;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.fullscreen-btn:hover {
+    background-color: #ffb300;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para la vista en pantalla completa */
+.fullscreen-image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.fullscreen-image-container img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.fullscreen-image-container.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Botón de cerrar en pantalla completa */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f44336;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón para cambiar entre el modo claro y oscuro */
+.mode-toggle {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: #64b5f6;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.mode-toggle:hover {
+    background-color: #1e88e5;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para el iframe de la música */
+iframe {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
